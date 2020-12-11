@@ -1,0 +1,115 @@
+<!--pages/personal/personal.wxml-->
+<view>
+  <!-- 用户信息 -->
+  <view class="personal-info">
+    <view class="info-show">
+      <image wx:if="{{!isLogin}}" class="show-avatar" src="/images/avatar.png" />
+      <image wx:else class="show-avatar" src="{{userinfo.avatar}}" />
+      <button wx:if="{{!isLogin}}" open-type="getUserInfo" bindgetuserinfo="getInfo">登录</button>
+      <view wx:else class="show-nickname">{{userinfo.nickname}}</view>
+      <text class="iconfont icon-xiangyoujiantou info-set" bindtap="toSet"></text>
+    </view>
+    
+    <view class="personal-species">
+      <view class="species-content">
+        <view class="content-surplus">
+          <view wx:if="{{!isLogin}}" class="surplus-num num">0</view>
+          <view wx:else class="surplus-num num">{{userinfo.balance}}</view>
+          <view class="content-describe">剩余金额</view>
+        </view>
+        <view class="content-recycle">
+          <view wx:if="{{!isLogin}}" class="content-num">0</view>
+          <view wx:else class="content-num">{{userinfo.recycle}}</view>
+          <view class="content-describe">回收次数</view>
+        </view>
+        <view class="content-earnings">
+          <view wx:if="{{!isLogin}}" class="content-num">0</view>
+          <view wx:else class="content-num">{{userinfo.earnings}}</view>
+          <view class="content-describe">累计收益</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 我的订单 -->
+  <view class="myOrder">
+    <view class="myOrder-title">
+      <text class="title-text">我的订单</text>
+    </view>
+    <view class="order-record">
+      <view class="record-classify">
+        <view class="classify" bindtap="toIdleOrder">
+          <image class="classify-img" src="/images/idle.png" />
+          <view class="classify-txt">商品订单</view>
+        </view>  
+        <view class="classify" bindtap="toCondition">
+          <image class="classify-img" src="/images/recycle_icon.png" />
+          <view class="classify-txt">回收订单</view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="myOrder-info">
+      <view class="order">
+        <navigator class="order-info" url="/pages/personal/order/order?type=payment">
+          <text class="iconfont icon-daifukuan orderListIcon "></text>
+          <view class="listCont">待付款</view>
+        </navigator>
+      </view>
+      <view class="order">
+        <navigator class="order-info" url="/pages/personal/order/order?type=delivery">
+          <text class="iconfont icon-daishouhuo orderListIcon "></text>
+          <view class="listCont">待发货</view>
+        </navigator>
+      </view>
+      <view class="order">
+        <navigator class="order-info" url="/pages/personal/order/order?type=received">
+          <text class="iconfont icon-templatedefault orderListIcon "></text>
+          <view class="listCont">待收货</view>
+        </navigator>
+      </view>
+      <view class="order">
+        <navigator class="order-info" url="/pages/personal/order/order?type=evaluate">
+          <text class="iconfont icon-daipingjia orderListIcon "></text>
+          <view class="listCont">待评价</view>
+        </navigator>
+      </view>
+    </view> -->
+  </view>
+  <!-- 其他列表 -->
+  <view class="other-list">
+    <view wx:if="{{recyclerId == 0}}" class="list" bindtap="toRegiister">
+      <text class="iconfont icon-lajixiang"></text>
+      <text class="txt">注册回收商</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+    <view wx:else class="list" bindtap="toTask">
+      <text class="iconfont icon-lajixiang"></text>
+      <text class="txt">任务大厅</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+    <view class="list" bindtap="toWallet">
+      <text class="iconfont icon-daifukuan"></text>
+      <text class="txt">我的钱包</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+    <view class="list" bindtap="toUnused">
+      <text class="iconfont icon-menu-product"></text>
+      <text class="txt">我的闲置</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+    <view class="list" bindtap="toAddress">
+      <text class="iconfont icon-dingwei1"></text>
+      <text class="txt">我的地址</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+    <view class="list">
+      <text class="iconfont icon-xiaoxi"></text>
+      <text class="txt">意见反馈</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+    <view class="list">
+      <text class="iconfont icon-help"></text>
+      <text class="txt">关于我们</text>
+      <text class="iconfont icon-xiangyoujiantou list-icon"></text>
+    </view>
+  </view>
+</view>

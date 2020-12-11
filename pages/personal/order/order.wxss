@@ -1,0 +1,135 @@
+/* pages/personal/order/order.wxss */
+page{
+  background: #f3f3f3;
+}
+.header {
+  width: 100%;
+  height: 44px;
+  border-bottom: 1rpx solid #e4e4e4;
+  display: flex;
+  background: #fff;
+  line-height: 44px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header view {
+  flex: 1;
+  text-align: center;
+}
+
+.header .active {
+  color: #4ac181;
+  border-bottom: 1rpx solid #4ac181;
+}
+
+.wrapper-list{
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.promulgator-info{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+.info-info{
+  display: flex;
+  align-items: center;
+}
+.info-info image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin: 10rpx;
+  margin-left: 20rpx;
+}
+
+.info-info > text{
+  margin: 10rpx;
+} 
+
+.cart_list {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.cart_list__img__name__color {
+  display: flex;
+  align-items: center;
+  margin-left: 15rpx;
+}
+.cart_list__img image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 15rpx;
+  
+}
+.list-info{
+  display: flex;
+  flex-direction: column;
+}
+.list-info > view{
+  margin: 10rpx;
+}
+.cart_list__price {
+  color: #aeaeae;
+  font-size: 26rpx;
+}
+.cart_list__price text {
+  font-size: 28rpx;
+  color: #de4f0b;
+}
+.info-all{
+  display: flex;
+  align-items: center;
+}
+.info-content{
+  margin-left: 15rpx;
+}
+.btn-main {
+  border-radius: 4px;
+  border: 1rpx solid #fd4a5f;
+  padding: 6rpx 20rpx;
+  font-size: 28rpx;
+  color: #fd4a5f;
+  margin: 0rpx 10rpx;
+  float: right;
+}
+
+.btn-default {
+  border-radius: 4px;
+  border: 1rpx solid #ccc;
+  padding: 6rpx 20rpx;
+  font-size: 28rpx;
+  color: #555;
+  float: right;
+  margin-left: 10rpx;
+}
+.nocontent {
+  width: 100%;
+  height: calc(100% - 438rpx);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.nocontent image {
+  padding-left: 80rpx;
+  width: 340rpx;
+  height: 272rpx;
+}
+
+.blank_text {
+  padding-top: 40rpx;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  color: #c6c6c8;
+}

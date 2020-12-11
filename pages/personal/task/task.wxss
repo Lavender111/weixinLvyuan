@@ -1,0 +1,118 @@
+page{
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  height: 100%;
+  background: #f3f3f3;
+}
+.tab{
+  display: flex;
+  background-color: #fff;
+  justify-content: center;
+}
+.tab-item{
+  font-size: 10pt;
+  text-align: center;
+  background-color: #f3f3f3;
+  width: 100%;
+  padding: 15rpx 50rpx;
+  margin: 20rpx 0;
+  /* line-height: 72rpx; */
+  /* border-bottom: 6rpx solid #eee; */
+}
+.tab > view:first-child{
+  margin-left: 20rpx;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+.tab > view:last-child{
+  margin-right: 20rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.active{
+  color: #fff;
+  background-color: #2bc874;
+}
+.content{
+  flex: 1;
+}
+.content > swiper{
+  background: #f3f3f3;
+  height: 100%;
+}
+/* 列表样式 */
+.content-syn{
+  height: 100%;
+}
+.list{
+  background: #fff;
+  margin: 20rpx;
+}
+.list-title{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 20rpx;
+}
+.list-tip{
+  width: 10rpx;
+  height: 50rpx;
+  background: #4ac181;
+  margin-right: 30rpx;
+}
+.list-matter{
+  font-weight: bold;
+  margin-right: 30rpx;
+}
+.list-detail{
+  padding:10rpx 20rpx;
+}
+
+.list-address{
+  margin: 20rpx;
+}
+
+.list-memo{
+  margin: 20rpx;
+  margin-top: 0;
+}
+.btn{
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  left: 60%;
+}
+.accept-btn{
+  /* position: absolute;
+  right: 40rpx; */
+  width: 200rpx;
+  text-align: center;
+  background: #f6d047;
+  color: #fff;
+  padding: 15rpx 30rpx;
+  border-radius: 7rpx;
+  margin-bottom: 20rpx;
+}
+.nocontent {
+  width: 100%;
+  height: calc(100% - 438rpx);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.nocontent image {
+  padding-left: 80rpx;
+  width: 340rpx;
+  height: 272rpx;
+}
+
+.blank_text {
+  padding-top: 40rpx;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  color: #c6c6c8;
+}

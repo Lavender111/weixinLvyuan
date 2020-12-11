@@ -1,0 +1,93 @@
+/* pages/index/recycle/appointment/appointment.wxss */
+page{
+  background-color: #eee;
+}
+.info{
+  background-color: #fff;
+}
+.info-type{
+  padding: 20rpx;
+}
+.merchant-info{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  padding-top: 0;
+}
+
+/* 上门回收信息样式 */
+.info-form{
+  background: #fff;
+}
+.form-title{
+  padding: 20rpx;
+  font-size: 15pt;
+}
+.appointment-info{
+  height: 90rpx;
+  border-bottom: 1rpx solid #eee;
+  margin: 0rpx 30rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+.reserve_inp{
+  margin-left: 30rpx;
+}
+.input{
+  font-size: 11pt;
+  margin-left: 30rpx;
+}
+.arrows{
+  position: absolute;
+  right: 20rpx;
+}
+.noBorder{
+  background-color: #fff;
+  margin: 20rpx 0;
+}
+.remark-info{
+  background-color: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.remark-info > text{
+  padding: 25rpx 20rpx;
+  padding-right: 0;
+}
+/* 底部button */
+.appointment-button{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 55px;
+}
+.btn_ok2{ 
+  font: 30rpx "microsoft yahei"; 
+  margin: 20rpx;
+  width: 100%;
+  padding: 15rpx 0; 
+  text-align: center; 
+  background-color: #40bb80;
+  color: #fff;
+  border-radius: 50rpx;
+ } 
+.weui-cell{
+   display: flex;
+   align-items: center;
+   color: #000;
+}
+.weui-cell > view {
+  margin: 15rpx 0;
+}
+.distance{
+  position: relative;
+  left: 20%;
+}

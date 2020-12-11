@@ -1,0 +1,69 @@
+<view class="container">
+  <form bindsubmit="createOrder">
+    <view wx:for="{{extract_list}}" wx:key="index" class="order-list">
+      <view class="way-extract">
+        <view class="extract-title">配送方式：自提</view>
+        <view class="extract-title">联系电话：18798802983</view>
+        <view class="extract-address">地址：{{item.commodity.place}}</view>
+      </view>
+      <view class="goods-list">
+        <view class="com-content b-f">
+          <view class="content-commodity">
+            <image class="com-img" src="{{item.commodity.pic}}" />
+            <view class="com-info">
+              <view class="info-title">{{item.commodity.title}}</view>
+              <view class="info-time">发布时间：{{item.commodity.creat}}</view>
+              <view class="info-price">￥{{item.commodity.price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>  
+    </view>
+    <view wx:if="{{sent_list.length}}">
+      <view class="way-extract">
+        <view class="extract-title">配送方式：帮送</view>
+        <view class="address-info">
+          <text>姓名：</text>
+          <input placeholder-style='color: #999;font-size: 11pt' name='name' class='reserve_inp' value="{{name}}" />
+        </view>
+        <view class="address-info">
+          <text>联系电话：</text>
+          <input placeholder-style='color: #999;font-size: 11pt;' name='phone' class='reserve_inp' value="{{phone}}" />
+        </view>
+        <view class="address-info" bindtap='onChangeAddress'>
+          <text>地址：</text>
+          <input placeholder-style='color: #999;font-size: 11pt;' name='address' class='reserve_inp' value='{{chooseAddress}}' />
+          <text class="iconfont icon-xiangyoujiantou arrows"></text>
+        </view>
+      </view>
+      <view class="goods-list">
+        <view wx:for="{{sent_list}}" class="com-content b-f">
+          <view class="content-commodity">
+            <image class="com-img" src="{{item.commodity.pic}}" />
+            <view class="com-info">
+              <view class="info-title">{{item.commodity.title}}</view>
+              <view class="info-time">发布时间：{{item.commodity.creat}}</view>
+              <view class="info-price">￥{{item.commodity.price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>  
+    </view>
+    <view class="pay-way">
+      <text>支付方式：</text>
+      <view class="input">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <text>{{array[index]}}</text>
+          <text class="iconfont icon-xiangyoujiantou arrows"></text>
+        </picker>
+      </view>
+      
+    </view>
+    <view class="jiesuan-box">
+      <view class="left-price">
+        <view class="total">合计：¥ {{totalPrice}}</view>
+      </view>
+      <button class="to-pay-btn" formType="submit">提交订单</button>
+    </view>
+  </form>
+</view>

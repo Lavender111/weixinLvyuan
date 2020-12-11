@@ -1,0 +1,32 @@
+<!--pages/personal/wallet/wallet.wxml-->
+<view class="wallet">
+  <view class="wallet-title">余额</view>
+  <view class="wallet-num">{{balance}}元</view>
+</view>
+<view class="tab">
+  <view class="tab-recharge" bindtap="toRecharge">
+    <image src="/images/recharge.png"></image>
+    <view class="recharge-txt">充值</view>
+  </view>
+  <view class="tab-withdraw" bindtap="toReflect">
+    <image src="/images/withdraw.png"></image>
+    <view class="withdraw-txt">提现</view>
+  </view>
+</view>
+<view class="listContain">
+  <view class="title">--交易明细--</view>
+  <block wx:for="{{list}}" wx:key="*this">
+    <view class="list">
+      <view class="list_1">
+        <view class="list_1_1">{{item.name}}</view>
+        <view class="list_1_2">{{item.stamp}}</view>
+      </view>
+      <view class="list_2 {{item.type==1?'green':'red'}}">{{item.type==1?'+':'-'}}{{item.num}} 元</view>
+    </view>
+  </block>
+</view>
+
+<view class="nocontent" wx:if="{{list.length==0}}">
+  <image src="/images/blank.png"></image>
+  <view class="blank_text">这里空空如也~</view>
+</view>

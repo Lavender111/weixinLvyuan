@@ -1,0 +1,80 @@
+/* pages/cart/idle/idle.wxss */
+page{
+  background-color: #f6f6f8;
+}
+.user-info{
+  background-color: #4ac181;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 50rpx 30rpx;
+}
+.user-info > image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.user-info > view{
+  margin: 0 20rpx;
+}
+
+.center_contain {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 100rpx;
+  justify-content: space-around;
+}
+
+.c_title {
+  font-size: 30rpx;
+  width: 140rpx;
+  height: 100%;
+  display: flex;
+  letter-spacing: 2rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 4rpx solid #4ac181;
+}
+
+
+.com-content{
+  border-bottom:2rpx solid #eee;
+  margin: 15rpx 0rpx;
+}
+.content-commodity{
+  display: flex;
+  align-items: center;
+}
+.com-img{
+  width: 180rpx;
+  height: 180rpx;
+  padding: 20rpx;
+}
+.com-info{
+  display: flex;
+  flex-direction: column;
+}
+.info-title{
+  margin-bottom: 10rpx;
+}
+.info-time{
+  color: #919191;
+  font-size: 25rpx;
+  margin-bottom: 20rpx;
+}
+.info-price{
+  color: #e38745;
+  margin-top: 20rpx;
+}
+.com-icon{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+}

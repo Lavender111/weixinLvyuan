@@ -1,0 +1,21 @@
+<!--pages/personal/set/set.wxml-->
+<view class="avatar">
+  <image src="{{avatar}}" class="avatar-img" bindtap="changeAvatar" />
+</view>
+<view class="nickname">
+  <view>昵称</view>
+  <input value="{{nickname}}" bindinput="nameInput" name="nickname" class="input" />
+</view>
+<view class="sex">
+  <radio-group class="kind-group" bindchange="sexChange">
+		<label class="b_radio" wx:for="{{sex}}" wx:key="id">
+			<radio color="#4ac181" value="{{item.id}}" checked="{{item.check}}" />{{item.name}}
+		</label>
+	</radio-group>
+</view>
+<view class="nickname">
+  <view>联系电话</view>
+  <input value="{{phone}}" bindinput="phoneInput" name="phone" class="input" />
+</view>
+<button bindtap="submit" class="btn">确定保存</button>
+

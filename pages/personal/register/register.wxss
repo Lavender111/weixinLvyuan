@@ -1,0 +1,75 @@
+/* pages/personal/register/register.wxss */
+page{
+  background-color: #f3f3f3;
+}
+.info-form{
+  background-color: #fff;
+}
+.register-info{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+  width: 100%;
+}
+.register-info > text{
+  padding: 35rpx 20rpx;
+}
+input{
+  width: 70%;
+}
+.info-address{
+  position: absolute;
+  right: 40rpx;
+  border: 1rpx solid #4ac181;
+  border-radius: 8rpx;
+  padding: 10rpx 15rpx;
+}
+
+.title{
+  color: #999;
+  margin: 10rpx 20rpx;
+}
+.photo-box {
+  /* padding: 28rpx 40rpx; */
+  padding:28rpx 40rpx 28rpx 40rpx;
+  background: #fff;
+}
+
+.photo-box .photoTitle {
+  font-size: 32rpx;
+}
+.q-image-wrap{
+  float: left;
+  margin-right: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.q-image{
+  width:160rpx;
+  height:160rpx;
+  margin-top:28rpx
+}
+.q-image-remover{
+  z-index: 2;
+  text-align: right;
+  position: relative;
+  top: -170rpx;
+}
+
+.register-button{
+  display: flex;
+  justify-content: center;
+}
+.btn_ok2{ 
+  font: 30rpx "microsoft yahei"; 
+  margin: 20rpx;
+  width: 100%;
+  padding: 15rpx 0; 
+  text-align: center; 
+  background-color: #40bb80;
+  color: #fff;
+  border-radius: 50rpx;
+  position: absolute;
+  left: 26%;
+  bottom: 20rpx;
+ } 

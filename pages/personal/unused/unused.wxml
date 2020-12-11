@@ -1,0 +1,33 @@
+<!--pages/personal/unused/unused.wxml-->
+<view class="container m-b5">
+  <view class="goods-detail-box">
+    <view class="header f-28 col-3">
+      <view catchtap="bindHeaderTap" class="{{dataType==0?'active':''}}" data-type="0">待售出</view>
+      <view catchtap="bindHeaderTap" class="{{dataType==1?'active':''}}" data-type="1">待发货</view>
+      <view catchtap="bindHeaderTap" class="{{dataType==2?'active':''}}" data-type="2">已卖出</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==3?'active':''}}" data-type="3">已取消</view>
+    </view>
+    <view style="height:50.8px"></view>
+    <scroll-view scroll-y="{{true}}">
+      <view class="idleList" wx:if="list.length">
+        <navigator wx:for="{{list}}" wx:key="index" class="com-content b-f" 
+        hover-class="none" url="/pages/personal/unused/edit/edit?id={{item.id}}">
+          <view class="content-commodity">
+            <image class="com-img" src="{{item.pic}}" />
+            <view class="com-info">
+              <view class="info-title">{{item.title}}</view>
+              <view class="info-time">发布时间：{{item.creat}}</view>
+              <view class="info-price">￥{{item.price}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view wx:if="{{list.length == 0}}">
+        <view class="yoshop-notcont">
+          <text class="iconfont icon-meiyougengduo"></text>
+          <text class="cont">暂无任何信息哦！</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

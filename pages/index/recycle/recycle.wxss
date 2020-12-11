@@ -1,0 +1,180 @@
+/* pages/index/recycle/recycle.wxss */
+page{
+  background-color: #f6f6f6;
+}
+.body{
+  background-color: #fff;
+}
+/* 回收类型样式 */
+.title{
+  padding: 30rpx;
+}
+.title-image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.title-text{
+  font-size: 11pt;
+  margin-left: 20rpx;
+}
+.classify-list{
+  display: flex;
+  justify-content: center;
+  margin: 0 20rpx;
+  height: 100%;
+}
+.list{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list-icon{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.list-txt{
+  font-size: 28rpx;
+}
+.list-arrows{
+  width:50rpx;
+  height:50rpx;
+  opacity:0;
+}
+.active{
+  opacity: 1.0;
+}
+/* item样式 */
+.cla_content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.categorys{
+  flex: 30%;
+  margin: 0 20rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  padding:15rpx 0;
+  border-radius: 15rpx;
+  background-color: #d2d2d2;
+}
+input{
+  margin: 20rpx;
+  margin-top: 30rpx;
+  border-radius: 15rpx;
+  background-color: #d2d2d2;
+  border-radius: 15rpx;
+  padding: 15rpx 20rpx;
+  width: 298rpx;
+  text-align: center;
+}
+.activity{
+  background: #a1dac7;
+  border: 2rpx solid #4fbe98;
+}
+.addTo{
+  display: flex;
+  align-items: center;
+}
+.select-txt > text{
+  font-weight: normal;
+}
+.addBtn{
+  background-color: #4ac181;
+  padding: 10rpx;
+  border-radius: 6rpx;
+  color: #fff;
+  position: absolute;
+  right: 20rpx;
+}
+.selected{
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.selected-title{
+  display: flex;
+  align-items: center;
+}
+.select-txt{
+  padding-top: 20rpx;
+  margin-left:20rpx;
+  font-weight:bold;
+}
+.delete-btn{
+  border: 1rpx solid #eee;
+  border-radius:20rpx;
+  color:#a1dac7;
+  position:absolute;
+  right:20rpx;
+  padding:7rpx 20rpx;
+  margin-top: 10rpx;
+}
+.content-tip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:100rpx;
+  padding-bottom: 20rpx;
+}
+.content-list{
+  display: flex;
+  align-items: center;
+}
+.content-list > view{
+  margin: 20rpx 20rpx;
+}
+.list-img{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.left{
+  margin-left: 80rpx;
+}
+.right{
+  position: absolute;
+  right: 80rpx;
+}
+/* 预计获得金币样式 */
+.forecast{
+  background-color: #fff;
+  margin-top: 20rpx;
+  height: auto;
+}
+.forecast-txt{
+  margin-left:20rpx;
+  padding-top: 20rpx;
+  font-weight:bold;
+}
+.forecast-txt > text{
+  color: red;
+}
+.forecast-tip{
+  color: #a6a6a6;
+  margin: 20rpx;
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+}
+.btn{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+}
+.next-btn{
+  background-color: #40bb80;
+  margin: 20rpx;
+  text-align: center;
+  color: #fff;
+  padding: 15rpx 120rpx;
+  border-radius: 50rpx;
+}
+
+

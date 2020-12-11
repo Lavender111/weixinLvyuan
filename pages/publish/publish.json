@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "发布",
+  "usingComponents": {
+    "van-steps": "/vant/steps/index",
+    "van-transition": "/vant/transition/index",
+    "van-stepper": "/vant/stepper/index",
+    "van-icon": "/vant/icon/index"
+  }
+}

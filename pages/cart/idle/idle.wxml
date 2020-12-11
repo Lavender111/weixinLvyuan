@@ -1,0 +1,28 @@
+<!--pages/cart/idle/idle.wxml-->
+<view class="container">
+  <view class="user-info">
+    <image src="{{userInfo.avatar}}" />
+    <view>{{userInfo.nickname}}</view>
+    <view>的闲置</view>
+  </view>
+  <view class="center_contain">
+    <view class="c_title ">在售商品</view>
+  </view>
+  <view class="googs-list">
+    <view class="category-list">
+      <navigator wx:for="{{list}}" wx:key="index" class="com-content b-f" hover-class="none" 
+      url="/pages/bazaar/goodDetail/goodDetail?id={{item.id}}">
+        <view class="content-commodity">
+          <image class="com-img" src="{{item.pic}}" />
+          <view class="com-info">
+            <view class="info-title">{{item.title}}</view>
+            <view class="info-time">发布时间：{{item.creat}}</view>
+            <view class="info-price">￥{{item.price}}</view>
+          </view>
+          <image class="com-icon" src="/images/addToCart.png" />
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+

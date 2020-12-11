@@ -1,0 +1,78 @@
+<!--pages/bazaar/bazaar.wxml-->
+<view class="top_box">
+    <view class="search_box" bindtap="search">
+      <image class="search_ico" src="/images/search.png"></image>
+      <view class="search_text">搜索你想要的商品</view>
+    </view>
+    <image bindtap="toCategory" class="top_list" src="/images/sort1.png"></image>
+</view>
+<swiper class="banner" indicator-dots autoplay indicator-active-color="#fff" circular>
+      <block wx:for="{{banner}}" wx:key="id">
+            <swiper-item>
+                  <image lazy-load src="{{item.img}}" class="banner_image" />
+            </swiper-item>
+      </block>
+</swiper>
+  <!--分类导航-->
+  <view class="{{scrollTop>310?'nofixed':''}}">
+  </view>
+  <view class="kind_contain {{scrollTop>310?'fixed':''}}">
+      <view class="nav-item {{-2==collegeCur?'tab-on':''}}" bindtap="selectAll">
+            <view class="nav-text">全部</view>
+      </view>
+      <scroll-view scroll-x class="nav" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+            <view class="nav-item" wx:for="{{college}}" wx:key="id" bindtap="collegeSelect" data-id="{{item.id}}">
+                  <view class="nav-text {{collegeCur == item.id?'tab-on':''}}">{{item.name}}</view>
+            </view>
+      </scroll-view>
+      <view class="kind_img" bindtap="showlist">
+            <image lazy-load src="{{showList?'/images/down.png':'/images/right.png'}}" />
+      </view>
+      <view class="kindlist_box" wx:if="{{showList}}">
+            <view class="kindlist_card">
+                  <view class="list_grid">
+                        <block wx:for="{{college}}" wx:key="id">
+                              <view class="list_one" bindtap="collegeSelect" data-id="{{item.id}}" data-class="{{item.id}}">
+                                    <view class="{{collegeCur==item.id?'list-on':''}}">{{item.name}}</view>
+                              </view>
+                        </block>
+                  </view>
+            </view>
+      </view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="category-list">
+    <navigator wx:for="{{list}}" wx:key="index" class="com-content b-f" hover-class="none" 
+    url="/pages/bazaar/goodDetail/goodDetail?id={{item.id}}">
+      <view class="content-commodity">
+        <image class="com-img" src="{{item.pic}}" />
+        <view class="com-info">
+          <view class="info-title">{{item.title}}</view>
+          <view class="info-time">发布时间：{{item.creat}}</view>
+          <view class="info-price">￥{{item.price}}</view>
+        </view>
+        <image class="com-icon" src="/images/addToCart.png" />
+      </view>
+    </navigator>
+    <!-- <navigator class="list-content b-f" hover-class="none">
+      <view class="list-avatar">
+        <image src="/images/activity2.jpg" />
+        <view>点击头像查看更多</view>
+      </view>
+      <view class="list-commodity">
+        <image src="/images/book.jpg" />
+        <view class="commodity-detail">
+          <view class="f-30 detail-title title twolist-hidden">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</view>
+          <view>
+            <view class="detail-price">￥1000元</view>
+            <view class="detail-time">11月6日发布</view>
+          </view>
+        </view>
+      </view>
+    </navigator> -->
+  </view>
+  <!--无内容显示-->
+  <view class="nocontent" wx:if="{{list.length==0}}">
+      <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+  </view>

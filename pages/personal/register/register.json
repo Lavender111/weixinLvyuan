@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "回收商注册",
+  "usingComponents": {
+    "van-icon": "/vant/icon/index"
+  }
+}

@@ -1,0 +1,46 @@
+<!--pages/personal/indent/pay/pay.wxml-->
+<view class="condition-detail">
+  <view class="detail-title">订单详情:</view>
+  <view class="detail-content" wx:for="{{detail}}" wx:key="index">
+    <view class="content-info">
+      <text>回收物品:</text>
+      <input placeholder-style='color: #999;font-size: 11pt' name='name' class='reserve_inp' value="{{item.name}}" />
+    </view>
+    <view class="content-info">
+      <text>回收重（数）量:</text>
+      <input placeholder-style='color: #999;font-size: 11pt' name='num' class='reserve_inp' value="{{item.num}}" />
+    </view>
+    <view class="content-info">
+      <text>预计获得:</text>
+      <input placeholder-style='color: #999;font-size: 11pt' name='unitPrice' class='reserve_inp' value="{{item.unitPrice}}￥" />
+    </view>
+  </view>
+</view>
+<view style="background:#fff;padding: 20rpx;margin-bottom:20rpx;">
+  <view class="detail-price">
+    <text>订单总价</text>
+    <input placeholder-style='color: #999;font-size: 11pt' name='price' class='reserve_inp input' bindinput ="priceInput" value="{{price}}" />
+    <text style="color:brown;">￥</text>
+  </view>
+</view>
+<view class="payTitle">
+  <text>请选择支付方式</text>
+</view>
+
+<view class="payType">
+  <view class="payList" bindtap="banlancePay" data-type="balance">
+    <view class="payImg"><image src="/images/balance.png"></image></view>
+    <view>余额支付</view>
+    <text class="iconfont icon-xiangyoujiantou arrows"></text>
+  </view>
+  <view class="payList" bindtap="offLinePay" data-type="offLine">
+    <view class="payImg"><image src="/images/offline.png"></image></view>
+    <view>线下支付</view>
+    <text class="iconfont icon-xiangyoujiantou arrows"></text>
+  </view>
+</view>
+<view class="pay-tip">
+  <text>温馨提示：请与客户协商好的情况下进行支付!</text>
+</view>
+
+

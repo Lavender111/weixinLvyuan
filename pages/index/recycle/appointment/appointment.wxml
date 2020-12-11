@@ -1,0 +1,92 @@
+<!--pages/index/recycle/appointment/appointment.wxml-->
+<form bindsubmit="submitInfo">
+<!-- 上门取件信息填写 -->
+<view class="info-form">
+  <view class="form-title">地址信息</view>
+  <view class="appointment-info">
+    <text>姓名：</text>
+    <input placeholder-style='color: #999;font-size: 11pt' name='name' class='reserve_inp' value="{{detail.name}}" />
+  </view>
+  <view class="appointment-info">
+    <text>联系电话：</text>
+    <input placeholder-style='color: #999;font-size: 11pt;' name='phone' class='reserve_inp' value="{{detail.phone}}" />
+  </view>
+  <view class='appointment-info'>
+    <text>所在城市：</text>
+    <view class="input">
+      <picker mode="region" bindchange="regionChange" value="{{region}}" custom-item="{{customItem}}">
+        <text wx:if="{{region}}" class="f-30">{{region}}</text>
+        <text wx:else class="f-30 col-7">选择省、市、区</text>
+      </picker>
+    </view>
+    <text class="iconfont icon-xiangyoujiantou arrows"></text>
+  </view>
+  <view class="appointment-info" bindtap='onChangeAddress'>
+    <text>具体地址：</text>
+    <input placeholder-style='color: #999;font-size: 11pt;' name='address' class='reserve_inp' value='{{chooseAddress}}' />
+  </view>
+</view>
+<view class="info-form">
+  <view class="form-title">预约时间</view>
+  <view class="appointment-info">
+    <text>上门日期：</text>
+    <view class="input">
+      <picker mode="date" value="{{date}}" start="2020-01-01" end="2070-10-01" bindchange="dateChange">{{date}}</picker>
+    </view>
+    <text class="iconfont icon-xiangyoujiantou arrows"></text>
+  </view>
+  <view class='appointment-info'>
+    <label>上门时间:</label>
+    <view class="input">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        {{array[index]}}
+      </picker>
+    </view>
+    <text class="iconfont icon-xiangyoujiantou arrows"></text>
+  </view>
+</view>
+<!-- 回收类型及数量信息 -->
+<view class="info">
+  <view class="info-type">
+    <text>回收类型及数量：</text>
+    <view style="margin-left:40rpx;margin-top:20rpx" wx:for="{{list}}" wx:key="id">
+      <text wx:if="{{item.id == 4}}">{{item.name}} {{item.number}}个 {{item.unitPrice}}元</text>
+      <text wx:elif="{{item.id==9}}">{{item.name}} {{item.number}}件 {{item.unitPrice}}元</text>
+      <text wx:elif="{{item.id==11}}">{{item.name}} {{item.number}}件 {{item.unitPrice}}元</text>
+      <text wx:else>{{item.name}} {{item.number}}公斤 {{item.unitPrice}}元</text>
+    </view>
+  </view>
+  <view class='merchant-info'>
+    <text>预约回收商：</text>
+    <text bindtap="modalRadio">{{item}}</text>
+    <text class="iconfont icon-xiangyoujiantou arrows"></text>
+  </view>
+</view>
+<modal id="modal" hidden="{{hiddenmodal}}" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class="page-section-title">附近回收商</view>
+  <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.id}}">
+          <view class="weui-cell__hd">
+            <radio value="{{item.id}}" checked="{{item.checked}}"/>
+          </view>
+          <view class="weui-cell__bd">{{item.name}} {{item.phone ? item.phone : ''}}</view>
+          <view class="distance" wx:if="{{item.distance}}">
+            <text class="iconfont icon-dingwei1"></text>
+            <text>{{item.distance}}km</text>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+</modal>
+<view class="remark-info">
+  <text>订单备注：</text>
+  <input placeholder-style='color: #999;font-size: 11pt;' placeholder="请输入备注信息" name='memo' class='reserve_inp' />
+</view>
+
+<!-- 预约 -->
+<view style="height:66.8px"></view>
+<view class="appointment-button">
+  <button form-type="submit" class="btn_ok2">提交预约</button>
+</view>
+</form>

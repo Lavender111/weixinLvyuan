@@ -1,0 +1,22 @@
+<scroll-view class="content-syn" scroll-y>
+  <view class="recycleList">
+    <view class="list" wx:for="{{list}}" wx:key="index">
+      <view class="list-title">
+        <view class="list-tip"></view>
+        <view class="list-time">预约<text>{{item.date}} {{item.time}}</text>上门</view>
+      </view>
+      <view class="list-detail" wx:for="{{item.recycleDetails}}" wx:key="index">
+        <view class="detail-name">回收物品：{{item.name}}</view>
+        <view class="detail-name">回收重（数）量：{{item.num}}</view>
+      </view>
+      <view class="list-address">
+        <text class="iconfont icon-dingwei1"></text>
+        <text class="txt">{{item.address}}</text>
+      </view>
+      <view class="list-memo" wx:if="{{item.memo}}">备注：{{item.memo}}</view>
+      <view class="btn">
+        <view class="accept-btn">立即接单</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

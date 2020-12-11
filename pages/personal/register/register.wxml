@@ -1,0 +1,53 @@
+<!--pages/personal/register/register.wxml-->
+<form bindsubmit="submitInfo">
+  <view class="info-form">
+    <view class="register-info">
+      <text>姓名：</text>
+      <input placeholder-style='color: #999;font-size: 11pt' placeholder="请输入真实姓名" name='name' class='reserve_inp' />
+    </view>
+    <view class="register-info">
+      <text>联系电话：</text>
+      <input placeholder-style='color: #999;font-size: 11pt' placeholder="请输入联系电话" name='phone' class='reserve_inp' />
+    </view>
+    <view class="register-info" bindtap='onChangeAddress'>
+      <text>地址：</text>
+      <input placeholder-style='color: #999;font-size: 11pt' placeholder="点击选取地址" name='address' class='reserve_inp' value='{{chooseAddress}}' />
+      <!-- <view class="info-address">获取地址</view> -->
+    </view>
+    <view class="register-info">
+      <text>身份证号：</text>
+      <input placeholder-style='color: #999;font-size: 11pt' placeholder="请输入身份证号" name='card' class='reserve_inp' />
+    </view>
+    <view class="register-info">
+      <text>店铺名称：</text>
+      <input placeholder-style='color: #999;font-size: 11pt' placeholder="请输入店铺名称" name='title' class='reserve_inp' />
+    </view>
+    <view class="register-info">
+      <text>所在城市：</text>
+      <input placeholder-style='color: #999;font-size: 11pt' placeholder="请输入当前所在城市" name='city' class='reserve_inp' />
+    </view>
+  </view>
+  <view class="photo-box">
+    <view class="photoTitle">上传本人身份证或营业执照</view>
+    <!-- 上传照片 -->
+    <view class="question-images clearFloat">
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="q-image-wrap">
+          <!-- 图片缩略图  -->
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <!-- 移除图片的按钮  -->
+          <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
+            <image src="/images/sub.png" style="width:50rpx;height:50rpx"></image>
+          </view>
+        </view>
+      </block>
+      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 3}}">
+        <image src="/images/add2.png" style="height:200rpx;width:200rpx"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 预约 -->
+  <view class="register-button">
+    <button form-type="submit" class="btn_ok2">立即注册</button>
+  </view>
+</form>

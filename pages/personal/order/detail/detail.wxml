@@ -1,0 +1,52 @@
+<!--pages/personal/order/detail/detail.wxml-->
+<view class="contain">
+      <view class="card">
+            <image class="top_over" src="/images/over.png"></image>
+            <image class="bot_over" src="/images/over.png"></image>
+            <view class="goods_box">
+                  <image class="goods_img" src="{{detail.pic}}"></image>
+                  <view class="goods_content">
+                        <view class="goods_title text-cut">{{detail.title}}</view>
+                        <view class="goods_author text-cut">{{detail.describe}}</view>
+                  </view>
+                  <view class="goods_price">￥{{detail.price}}</view>
+            </view>
+            <view class="border"></view>
+            <view class="list">
+                  <view class="list_1">{{detail.delivery==0?'自提':'帮送'}}</view>
+                  <view wx:if="{{detail.delivery==1}}" class="list_2">收货人:{{detail.order.name}}</view>
+                  <view wx:if="{{detail.delivery==1}}" class="list_2">联系电话：{{detail.order.phone}}</view>
+                  <view class="list_2">地址：{{detail.delivery==0?detail.place:detail.order.address}}</view>
+            </view>
+            <view class="border"></view>
+            <view class="list">
+                  <view class="list_1">{{detail.order.state==1?'等待收货中':(detail.order.state==2?'交易完成':'订单已取消')}}</view>
+                  <view class="list_2">{{detail.order.state==1?'系统已电话通知卖家准备':(detail.order.state==2?'要不再来一单':'祝您生活愉快')}}</view>
+            </view>
+            <view class="border"></view>
+            <view class="orderfare">ORDER FARE</view>
+            <view class="fare_box">
+                  <view class="fare_title">下单时间</view>
+                  <view class="fare_des">{{detail.order.creat}}</view>
+            </view>
+            <view class="fare_box">
+                  <view class="fare_title">支付金额</view>
+                  <view class="fare_des">￥{{detail.price}}</view>
+            </view>
+            <view class="border"></view>
+            <view class="orderfare">CONTACT SELLER</view>
+            <view class="fare_box" bindtap="phone" data-phone="{{userinfo.phone}}">
+                  <view class="fare_title">电话</view>
+                  <view class="fare_des">{{detail.phone}}</view>
+            </view>
+            <view class="border"></view>
+            <view class="bot_box" wx:if="{{detail.order.state==1}}">
+                  <view class="cancel" bindtap="cancelOrder" data-price="{{detail.price}}" data-id="{{detail.id}}" >取消订单</view>
+                  <view class="contact" bindtap="receipt" data-promulgator="{{detail.promulgatorId}}" data-price="{{detail.price}}" data-id="{{detail.id}}">确认收货</view>
+            </view>
+            <view class="bot_box" >
+                  <view wx:if="{{detail.order.state==2||detail.order.state==3}}" class="delete" bindtap="delete">删除订单</view>
+            </view>
+
+      </view>
+</view>

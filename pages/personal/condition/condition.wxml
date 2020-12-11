@@ -1,0 +1,63 @@
+<!--pages/personal/condition/condition.wxml-->
+<view class="container m-b5">
+  <view class="goods-detail-box">
+    <view class="header f-28 col-3">
+      <view catchtap="bindHeaderTap" class="{{dataType==0?'active':''}}" data-type="0">未接单</view>
+      <view catchtap="bindHeaderTap" class="{{dataType==1?'active':''}}" data-type="1">已接单</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==2?'active':''}}" data-type="2">已完成</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==3?'active':''}}" data-type="3">已取消</view>
+    </view>
+    <view style="height:50.8px"></view>
+    <scroll-view scroll-y="{{true}}">
+      <view class="wrapper">
+        <view wx:if="{{list.length}}">
+          <view class="wrapper-list" wx:for="{{list}}" wx:key="index">
+            <view class="list-time">
+              <text>预约时间：</text>
+              <text>{{item.date}} {{item.time}}</text>
+            </view>
+            <view class="list-detailInfo" wx:for="{{item.recycleDetails}}" wx:key="index">
+              <view class="list-info">
+                <text class="info-text">回收物品:</text>
+                <text class="info-content">{{item.name}}</text>
+              </view>
+              <view class="list-info">
+                <text class="info-text">回收重（数）量:</text>
+                <text class="info-content">{{item.num}}</text>
+              </view>
+              <view class="list-info">
+                <text class="info-text">预计获得人民币:</text>
+                <text class="info-content">{{item.unitPrice}}元</text>
+              </view>
+            </view>
+            <view class="list-all">
+              <view class="info-all">
+                <text>上门地址:</text>
+                <text class="info-content">{{item.address}}</text>
+              </view>
+              <view class="info-all" style="padding-top:10rpx">
+                <text>预计总计:</text>
+                <text class="info-content" style="color:#fd4a5f;">{{item.price}}元</text>
+                <view class="flex-box">
+                  <view wx:if="{{item.state == 0 || item.state == 1}}" bindtap="cancelAppointment" class="btn-default" data-id="{{item.id}}">取消预约</view>
+                  <view class="btn-main" wx:if="{{item.state == 1}}" bindtap="confirmRecipt" data-id="{{item.id}}">确认收款</view>
+                </view>
+                <view class="flex-box" wx:if="{{item.state == 2}}">
+                  <view class="btn-main">已打包</view>
+                </view>
+                <view class="flex-box" wx:if="{{item.state == 3}}">
+                  <view class="btn-default">已取消</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="nocontent" wx:else>
+          <image src="/images/blank.png"></image>
+          <view class="blank_text">这里空空如也~</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+

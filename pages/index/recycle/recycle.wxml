@@ -1,0 +1,90 @@
+<!--pages/index/recycle/recycle.wxml-->
+<!-- banner图片 -->
+<!-- <image src="/images/recycle_ban.jpg" class="banner" /> -->
+<!-- 回收类型 -->
+<view class="body">
+  <view class="title">
+    <image class="title-image" src="/images/tip.png" />
+    <text class="title-text">选择以下回收类型</text>
+  </view>
+  <view class="classify-list">
+    <view class="list" bindtap="changeItem" data-tab="1">
+      <image class="list-icon" src="/images/carton.png" />
+      <view class="list-txt">纸类</view>
+      <image class="list-arrows {{tab==1 ? 'active':''}}" src="/images/arrow.png"></image>
+    </view>
+    <view class="list" bindtap="changeItem" data-tab="2">
+      <image class="list-icon" src="/images/plastique.png" />
+      <text class="list-txt">塑料瓶</text>
+      <image class="list-arrows {{tab==2 ? 'active':''}}" src="/images/arrow.png"></image>
+    </view>
+    <view class="list" bindtap="changeItem" data-tab="3">
+      <image class="list-icon" src="/images/nylon.png" />
+      <view class="list-txt">废旧玻璃</view>
+      <image class="list-arrows {{tab==3 ? 'active':''}}" src="/images/arrow.png"></image>
+    </view>
+    <view class="list" bindtap="changeItem" data-tab="4">
+      <image class="list-icon" src="/images/pop-top.png" />
+      <view class="list-txt">旧金属</view>
+      <image class="list-arrows {{tab==4 ? 'active':''}}" src="/images/arrow.png"></image>
+    </view>
+    <view class="list" bindtap="changeItem" data-tab="5">
+      <image class="list-icon" src="/images/affaires.png" />
+      <view class="list-txt">纺织物</view>
+      <image class="list-arrows {{tab==5 ? 'active':''}}" src="/images/arrow.png"></image>
+    </view>
+    <view class="list" bindtap="changeItem" data-tab="6">
+      <image class="list-icon" src="/images/electric.png" />
+      <view class="list-txt">旧家电</view>
+      <image class="list-arrows {{tab==6 ? 'active':''}}" src="/images/arrow.png"></image>
+    </view>
+  </view>
+  <view class="cla_content" >
+    <view wx:for="{{categorys}}" wx:key="id" class="categorys {{items==item.id ? 'activity':''}}" bindtap="changeItems" data-id="{{item.id}}" data-matter="{{item.name}}">
+      {{item.name}}
+    </view>
+    <input type="text" placeholder="输入回收重（数）量" bindinput="inputedit" value="{{number}}" />
+  </view>
+  <view class="addTo">
+    <view class="select-txt" style="margin-bottom:20rpx;">
+    已选择： 
+      <text wx:if="{{items==0}}">{{matter}} {{number}}</text>
+      <text wx:elif="{{items==4}}">{{matter}} {{number}}个</text>
+      <text wx:elif="{{items==9}}">{{matter}} {{number}}件</text>
+      <text wx:elif="{{items==11}}">{{matter}} {{number}}件</text>
+      <text wx:else>{{matter}} {{number}}公斤</text>
+    </view>
+    <view class="addBtn" bindtap="add">添加</view>
+  </view>
+</view>
+<view class="selected">
+  <view class="selected-title">
+    <view class="select-txt">已添加:</view>
+    <view class="delete-btn" bindtap="empty">清空</view>
+  </view>
+  <view class="selected-content">
+    <view class="content-tip" wx:if="{{list.length == 0}}">暂未选择物品</view>
+    <view wx:else>
+      <view class="content-list" wx:for="{{list}}" wx:key="id">
+        <image class="list-img left" src="{{item.icon}}" />
+        <view class="list-matter">{{item.name}}</view>
+        <view wx:if="{{item.id == 4}}" class="list-num">{{item.number}}个</view>
+        <view wx:elif="{{item.id == 9}}" class="list-num">{{item.number}}件</view>
+        <view wx:elif="{{item.id == 11}}" class="list-num">{{item.number}}件</view>
+        <view wx:else class="list-num">{{item.number}}公斤</view>
+        <view class="list-num">{{item.unitPrice}}元</view>
+        <image class="list-img right" bindtap="delete" data-id="{{index}}" src="/images/remove.png" />
+      </view>
+    </view>
+  </view>  
+</view>
+<view class="forecast">
+  <view class="forecast-txt">预计获得人民币：<text>{{species}}元</text></view>
+  <view class="forecast-tip">暖心提示：回收所得有少量出入，具体以现场回收人员测量为准</view>
+</view>
+<view style="height:66.8px"></view>
+<view class="btn">
+  <view class="next-btn" bindtap="toAppointment">下一步</view>
+</view>
+
+

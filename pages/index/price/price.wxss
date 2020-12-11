@@ -1,0 +1,35 @@
+/* pages/index/price/price.wxss */
+page{
+  background-color: #eee;
+}
+.list{
+  display: flex;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 10rpx 20rpx;
+}
+.list-image{
+  margin: 30rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 20rpx;
+}
+.list-content{
+  display: flex;
+  flex-direction: column;
+}
+.content-title{
+  margin-top: 30rpx;
+  font-weight: bold;
+  font-size: 11pt;
+}
+.content-tip{
+  color: #928988;
+  font-size: 21rpx;
+  margin-top: 10rpx;
+}
+.content-price{
+  color: #f76d84;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

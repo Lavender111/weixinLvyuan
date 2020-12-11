@@ -1,0 +1,116 @@
+<!--index.wxml-->
+<!-- 轮播图区 -->
+<view style="background:#4ac181;width:100%;height:250rpx;">
+  <swiper class="content-info-slide" indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular>
+    <swiper-item>
+      <image src="/images/banner1.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 位置 -->
+  <view style="margin-bottom:20rpx;margin-left:20rpx;">当前所在位置:{{myAddress}}</view>
+  <!-- 按钮区 -->
+  <view class="entrance">
+    <view class="entrance-content" bindtap="toRecycle">
+      <image class="entrance-img" src="/images/recycle1.jpg"/>
+      <text class="entrance-title" style="color:#f4994d;font-size:15pt;position:relative;top:-27vh;">预约回收</text>
+      <view class="entrance-tip" style="position:relative;top:-26vh;">源头减量，立即预约上门回收</view>
+    </view>
+    <view class="entrance-content1">
+      <view bindtap="toRubbish">
+        <image class="entrance-img" src="/images/classify.jpg"/>
+        <text class="entrance-title" style="color:#12a962;">垃圾分类</text>
+        <view class="entrance-tip">实用的小技巧</view>
+      </view>
+      <view bindtap="toPrice">
+        <image class="entrance-img" src="/images/price1.jpg"/>
+        <text class="entrance-title" style="color:#563fe6;">回收价格</text>
+        <view class="entrance-tip">环保有收益</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="portal">
+    <view class="portal-content">
+      <view class="rubbish" bindtap="toRecycle">
+        <image class="portal-img" src="/images/recycle.jpg"/>
+        <text class="portal-title" style="color:#f4994d;font-size:15pt">预约回收</text>
+        <view class="portal-tip">源头减量，回收得金币</view>
+      </view>
+      <view class="price" bindtap="toRubbish">
+        <image class="portal-img" src="/images/rubbish.jpg"/>
+        <text class="portal-title" style="color:#12a962;">垃圾分类</text>
+        <view class="portal-tip">实用的小技巧</view>
+      </view>
+    </view>
+    <view class="portal-content">
+      <view class="price" bindtap="toPrice">
+        <image class="portal-img" src="/images/price.jpg"/>
+        <text class="portal-title" style="color:#563fe6;">回收价格</text>
+        <view class="portal-tip">环保有收益</view>
+      </view>
+      <view class="rubbish" bindtap="toMarket" style="margin-left:0rpx;margin-right:20rpx;">
+        <image class="portal-img" src="/images/idle1.jpg"/>
+        <text class="portal-title" style="color:#e74538;font-size:15pt;">二手市场</text>
+        <view class="portal-tip">物尽其用</view>
+      </view>
+    </view>
+  </view> -->
+  <!-- 我的金币 -->
+  <!-- <view class="mySpecies">
+    <view class="mySpecies-title">
+      <image class="title-image" src="/images/nav.png" />
+      <text class="title-text">我的金币</text>
+    </view>
+    <view class="mySpecies-content">
+      <view class="content-surplus">
+        <view class="surplus-num">{{balance}}</view>
+        <view class="content-describe">剩余金额</view>
+      </view>
+      <view class="content-recycle">
+        <view class="content-num">{{recycle}}</view>
+        <view class="content-describe">回收次数</view>
+      </view>
+      <view class="content-earnings">
+        <view class="content-num">{{earnings}}</view>
+        <view class="content-describe">累计收益</view>
+      </view>
+    </view>
+  </view> -->
+  <!-- 活动推荐 -->
+  <view>
+    <view class="mySpecies-title" style="margin-bottom:0;">
+      <image class="title-image" src="/images/nav.png" />
+      <text class="title-text">绿源资讯</text>
+    </view>
+    <view class="activity-list">
+      <view class="list">
+        <image class="list-image" src="/images/activity1.jpg" />
+        <view class="list-txt">
+          <view class="txt-title">变废为宝</view>
+          <view class="txt-tip">阅读 21</view>
+        </view>
+      </view>
+      <view class="list">
+        <image class="list-image" src="/images/activity1.jpg" />
+        <view class="list-txt">
+          <view class="txt-title">变废为宝</view>
+          <view class="txt-tip">阅读 21</view>
+        </view>
+      </view>
+      <view class="list">
+        <image class="list-image" src="/images/activity1.jpg" />
+        <view class="list-txt">
+          <view class="txt-title">变废为宝</view>
+          <view class="txt-tip">阅读 21</view>
+        </view>
+      </view>
+    </view>
+  </view> 
+  <view>
+    <!-- 底线 -->
+    <view class="title-footer p-r">
+      <text class="f-24 col-9 cont">我是有底线的</text>
+      <view class="hr"></view>
+    </view>
+  </view>
+</view>
+

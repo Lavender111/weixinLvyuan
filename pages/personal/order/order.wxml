@@ -1,0 +1,65 @@
+<!--pages/personal/order/order.wxml-->
+<view class="container m-b5">
+  <view class="goods-detail-box">
+    <view class="header f-28 col-3">
+      <view catchtap="bindHeaderTap" class="{{dataType==0?'active':''}}" data-type="0">全部订单</view>
+      <view catchtap="bindHeaderTap" class="{{dataType==1?'active':''}}" data-type="1">待发货</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==2?'active':''}}" data-type="2">已完成</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==3?'active':''}}" data-type="3">已取消</view>
+    </view>
+    <view style="height:50.8px"></view>
+    <scroll-view scroll-y="{{true}}">
+      <view class="wrapper">
+        <view wx:if="{{list.length}}">
+          <view class="wrapper-list" wx:for="{{list}}" wx:key="index">
+            <view class="promulgator-info">
+              <view class="info-info" data-id="{{item.user.id}}" bindtap="toHisIdle">
+                <image src="{{item.user.avatar}}" />
+                <text class="info-name">{{item.user.nickname}}</text>
+                <text class="iconfont icon-xiangyoujiantou arrows"></text>
+              </view>
+            </view>
+            <view class="cart_list" >
+              <view class="cart_list__img__name__color" data-id="{{item.order.id}}" bindtap="toOrderDetail">
+                <view class="cart_list__img">
+                  <image src="{{item.pic}}" />
+                </view>
+                <view class="list-info">
+                  <view class="cart_list__name__color">{{item.title}} </view>
+                  <view style="color:#999;">发布于{{item.creat}}</view>
+                  <view class="cart_list__price">
+                    <text>￥{{item.price}}</text>
+                  </view>
+                  <view>
+                    <text>实际付款:</text>
+                    <text class="info-content" style="color:#fd4a5f;">{{item.price}}元</text>
+                  </view>
+                </view>
+              </view>  
+            </view>
+            <view class="info-all" style="padding-top:10rpx">
+                
+                <view class="flex-box" wx:if="{{item.order.state == 1}}">
+                  <view bindtap="cancelOrder" class="btn-default" data-price="{{item.price}}" data-id="{{item.id}}">订单取消</view>
+                  <view class="btn-main"  bindtap="receipt" data-promulgator="{{item.user.id}}" data-price="{{item.price}}" data-id="{{item.id}}">确认收货</view>
+                  <view class="btn-default"  bindtap="toOrderDetail" data-id="{{item.order.id}}">查看详情</view>
+                </view>
+                <view class="flex-box" wx:if="{{item.order.state == 2}}">
+                  <view class="btn-main" data-id="{{item.order.id}}" bindtap="deleteOrder">删除订单</view>
+                  <view class="btn-default"  bindtap="toOrderDetail" data-id="{{item.order.id}}">查看详情</view>
+                </view>
+                <view class="flex-box" wx:if="{{item.order.state == 3}}">
+                  <view class="btn-default">订单已取消</view>
+                  <view class="btn-default"  bindtap="toOrderDetail" data-id="{{item.order.id}}">查看详情</view>
+                </view>
+              </view>
+          </view>
+        </view>
+        <view class="nocontent" wx:else>
+          <image src="/images/blank.png"></image>
+          <view class="blank_text">这里空空如也~</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

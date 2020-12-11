@@ -1,0 +1,104 @@
+<view class="top_contain">
+      <view class="top_img">
+            <image lazy-load src="{{publishinfo.pic}}"></image>
+      </view>
+      <view class="title text-cut">{{publishinfo.title}}</view>
+      <view class="author  text-cut">{{publishinfo.describe}}</view>
+      <view class="price_box">
+            <view class="now_price">￥{{publishinfo.price}}元</view>
+      </view>
+</view>
+<view class="blank"></view>
+<view class="center_contain">
+      <view class="c_title ">发布信息</view>
+</view>
+<!--发布信息-->
+<view>
+      <view class="user_box">
+            <image lazy-load src="{{userinfo.avatar}}"></image>
+            <view class="des_box">
+                  <view class="user_name">{{userinfo.nickname}}</view>
+                  <view class="local_box">
+                        <image src="/images/local.png"></image>
+                        <view>{{userinfo.address}}</view>
+                  </view>
+            </view>
+            <view class="sex">
+                  <image lazy-load src="{{userinfo.sex==0?'/images/none.png':(userinfosex==1?'/images/boy.png':'/images/girl.png')}}"></image>
+            </view>
+      </view>
+      <view class="time_box">
+            <view class="kind">{{publishinfo.name}}</view>
+            <view class="time">发布于{{publishTime}}</view>
+      </view>
+      <view class="deliver_box">
+            <view class="deliver_first">
+                  <view class="deliver_title">取货方式：</view>
+                  <view class="deliver_kind" wx:if="{{publishinfo.delivery == 0}}">自提</view>
+                  <view class="deliver_kind" wx:if="{{publishinfo.delivery == 1}}">帮送</view>
+            </view>
+            <view class="deliver_first" wx:if="{{publishinfo.delivery == 0}}">
+                  <view style="margin:30rpx 0rpx;" class="deliver_title">地址：</view>
+                  <view class="deliver_place">{{publishinfo.place}}</view>
+            </view>
+            
+      </view>
+      <view class="palceInput_box" wx:if="{{publishinfo.delivery == 1}}">
+            <text style="font-size:28rpx;">买家可以帮送，请填写您的收货信息:</text>
+            <input style="margin-top:20rpx;" bindinput="nameInput" value="{{name}}" placeholder="姓名"></input>
+            <input style="margin:20rpx 0rpx;" bindinput="phoneInput" value="{{phone}}" placeholder="联系电话"></input>
+            <input bindinput="placeInput" value="{{address}}" placeholder="收货地址"></input>
+      </view>
+      <view class="notes_box" wx:if="{{publishinfo.notes!==''}}">
+            <view class="notes">
+                  <view class="notes_text">备注信息:</view>
+                  <view class="notes_text">{{publishinfo.notes}}</view>
+            </view>
+      </view>
+</view>
+
+<view style="height: 96rpx;"></view>
+<!--底部导航-->
+<view class="btm_tool">
+  <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <view class="item_name">客服</view>
+    <button open-type="contact"></button>
+  </view>
+  <view class="tool_item">
+    <view class="iconfont icon-fenxiang"></view>
+    <view class="item_name">分享</view>
+    <button open-type="share"></button>
+  </view>
+  <view data-id="{{publishinfo.id}}" class="tool_item btn_cart" bindtap="hanleCartAdd">加入购物车</view>
+  <view class="tool_item btn_buy" bindtap="buy">立即购买</view>
+</view>
+<!-- <view class="tabbar">
+      <view class="t_card">
+            <image src="/images/index.png"></image>
+            <text>首页</text>
+            <button class="t_button" bindtap="home"></button>
+      </view>
+      
+      <view class="t_card">
+            <image src="/images/contact.png"></image>
+            <text>反馈</text>
+            <button class="t_button" bindtap="go" data-go="/pages/kefu/kefu"></button>
+      </view>
+     
+      <view class="t_card">
+            <image src="/images/share.png"></image>
+            <text>分享</text>
+            <button class="t_button" open-type="share"></button>
+      </view>
+      <view class="buy_box">
+        <view class="tool_item btn_cart" bindtap="hanleCartAdd">加入购物车</view>
+        <view class="buy shadow" bindtap="buy">立即购买</view>
+      </view>
+</view> -->
+
+<!--悬浮客服功能-->
+<!-- <view class="contact_box" bindtap="go" data-go="/pages/kefu/kefu" animation="{{animationKefuData}}">
+     <image src="/images/ww.jpg" ></image>
+     <view >反馈</view>
+</view> -->

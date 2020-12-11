@@ -1,0 +1,12 @@
+<!--pages/index/price/price.wxml-->
+<view class="price-list" wx:for="{{prices}}" wx:key="{{index}}">
+  <view class="list" style="margin-top:20rpx;">
+    <image class="list-image" src="{{item.icon}}" />
+    <view class="list-content">
+      <view class="content-title">{{item.name}}</view>
+      <view class="content-tip">{{item.explain}}</view>
+      <view wx:if="{{item.lowPrice != 0}}" class="content-price">{{item.lowPrice}}-{{item.highPrice}}{{item.unit}}</view>
+      <view wx:else class="content-price">{{item.unit}}</view>
+    </view>
+  </view>
+</view>

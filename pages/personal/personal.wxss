@@ -1,0 +1,154 @@
+/* pages/personal/personal.wxss */
+page{
+  background: #f3f3f3;
+}
+.personal-info{
+  background: #4ac181;
+}
+.info-show{
+  padding-left: 50rpx;
+  padding-top: 30rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.show-avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  
+}
+button::after{
+  border: none;
+}
+button{
+  background: none;
+  font-size: 15pt;
+  position: absolute;
+  left: 6vw;
+}
+.button-hover{
+  background: none;
+}
+.show-nickname{
+  font-size: 13pt;
+  margin-left: 60rpx;
+}
+.info-set{
+  position: absolute;
+  right: 3vw;
+}
+/* 金币区样式 */
+.species-content{
+  display: flex;
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 100rpx;
+}
+.content-surplus,.content-recycle,.content-earnings{
+  padding: 0 50rpx;
+  margin-bottom: 20rpx;
+}
+.num{
+  font-size: 13pt;
+}
+.content-num{
+  text-align: center;
+}
+.content-describe{
+  margin-top: 10rpx;
+  color: #000;
+  font-size: 10pt;
+}
+.content-recycle,.content-earnings{
+  float: right;
+}
+/* 我的订单区样式 */
+.myOrder{
+  /* margin: 0 15rpx; */
+  background:#fff;
+  border: 1rpx solid #eee;
+  /* border-radius: 15rpx; */
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  box-shadow: 3rpx 3rpx 10rpx 1rpx #f3f3f3;
+  position: relative;
+  top: -8vh;
+}
+.myOrder-title{
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+}
+.title-text{
+  font-size: 12pt;
+}
+.myOrder-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order{
+  padding: 30rpx 4vw;
+}
+.info-icon{
+  width: 40rpx;
+  height: 40rpx;
+  
+}
+.orderListIcon{
+  display: block;
+  text-align: center;
+}
+.listCont{
+  font-size: 10pt;
+}
+/* 公益记录样式 */
+.commonwealth-record{
+  background: #fff;
+  position: relative;
+  top: -6vh;
+}
+.record-title{
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.record-classify{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.classify{
+  flex: 1;
+  padding: 30rpx 60rpx;
+  border-right: 1rpx solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.classify-img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.classify-txt{
+  font-size: 10pt;
+}
+/* 其他列表 */
+.other-list{
+  background: #fff;
+  position: relative;
+  top: -4vh;
+}
+.list{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.txt{
+  font-size: 11pt;
+  margin-left: 20rpx;
+}
+.list-icon{
+  float: right;
+}
