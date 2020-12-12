@@ -1,5 +1,6 @@
 // pages/personal/order/order.js
 var util = require('../../../utils/util');
+var app = getApp()
 Page({
 
   /**
@@ -146,6 +147,7 @@ onReachBottom: function () {
             header: { 'content-type': 'application/x-www-form-urlencoded' },
             success:function(res){
               if(res.data.sta === 1){
+                app.queryUserInfo();
                 _this.getInfo('刷新数据中...')
               }
             }

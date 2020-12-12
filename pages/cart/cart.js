@@ -43,6 +43,20 @@ Page({
     wx.showLoading({                        //显示 loading 提示框
         title: message,
     })
+    if(!wx.getStorageSync('openId')){
+      wx.showModal({
+        title: '温馨提示',
+        content: '该功能需要登录方可使用，是否马上去登录',
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '/pages/personal/personal',
+            })
+          }
+        }
+      })
+      return;
+    }
     wx.request({
       url: 'http://localhost:8088/cart/getMyCart',    //本地设置不校验合法域名
       data: { userId:userinfo.id,page: that.data.page, count: that.data.pageSize },
