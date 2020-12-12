@@ -18,6 +18,20 @@ Page({
   },
 
   onShow:function(){
+    if (!wx.getStorageSync('openId')) {
+      wx.showModal({
+        title: '温馨提示',
+        content: '该功能需要登录方可使用，是否马上去登录',
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '/pages/personal/personal',
+            })
+          }
+        }
+      })
+      return;
+    }
     var userinfo = wx.getStorageSync('userinfo')
     this.setData({
       balance:(userinfo.balance).toFixed(2)

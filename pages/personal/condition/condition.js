@@ -32,6 +32,20 @@ Page({
   // 获取分页列表
   getInfo: function (message) {
     var that = this;
+    if(!wx.getStorageSync('openId')){
+      wx.showModal({
+        title: '温馨提示',
+        content: '该功能需要登录方可使用，是否马上去登录',
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '/pages/personal/personal',
+            })
+          }
+        }
+      })
+      return;
+    }
     let userinfo = wx.getStorageSync('userinfo');
     wx.showNavigationBarLoading(message)              //在当前页面显示导航条加载动画
     wx.showLoading({                        //显示 loading 提示框

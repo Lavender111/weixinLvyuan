@@ -103,6 +103,31 @@ Page({
             commodityInfo:res.data.obj
           })
           let {commodityInfo} = that.data;
+          if(commodityInfo.delivery == 0){
+            that.setData({
+              delivery: [{
+                name: '自提',
+                id: 0,
+                check: true,
+              }, {
+                name: '帮送',
+                id: 1,
+                check: false
+              }]
+            })
+          } else {
+            that.setData({
+              delivery: [{
+                name: '自提',
+                id: 0,
+                check: false,
+              }, {
+                name: '帮送',
+                id: 1,
+                check: true
+              }],
+            })
+          }
           that.setData({
             good:commodityInfo.title,
             describe:commodityInfo.describe,

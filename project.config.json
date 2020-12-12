@@ -215,6 +215,13 @@
 					"id": -1,
 					"name": "pages/personal/wallet/reflect/reflect",
 					"pathName": "pages/personal/wallet/reflect/reflect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/rubbish/rubbish",
+					"pathName": "pages/index/rubbish/rubbish",
 					"scene": null
 				}
 			]

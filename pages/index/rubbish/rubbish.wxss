@@ -3,53 +3,69 @@ page {
   background-color: #e0eee8;
 }
 
+
 .tab {
+  margin: 30rpx;
+  margin-bottom: 0rpx;
+  font-size: 25rpx;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  padding: 40rpx 0;
-  height: 100%;
 }
 
 .box {
-  width: 480rpx;
-  height: 480rpx;
-  /* background-color: gold; */
-  display: block;
+  flex: 40%;
+  background-color: #fff;
 }
 
-.box view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 230rpx;
-  height: 230rpx;
-  padding: 0;
-  float: left;
-}
 
 .recoverable-garbage {
   background-color: rgb(33, 82, 135);
-  border-radius: 110rpx 110rpx 38rpx 110rpx;
+  border-radius: 20rpx;
   margin: 0 10rpx 10rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx 20rpx 20rpx 30rpx;
+  width: 280rpx;
+  height: 280rpx;
 }
 
 .harmful-waste {
   background-color: rgb(234, 62, 48);
-  border-radius: 110rpx 110rpx 110rpx 38rpx;
+  border-radius: 20rpx;
   margin: 0 0 10rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx 30rpx 20rpx 20rpx;
+  width: 280rpx;
+  height: 280rpx;
 }
 
 .kitchen-waste {
   background-color: rgb(5, 130, 64);
-  border-radius: 110rpx 38rpx 110rpx 110rpx;
+  border-radius: 20rpx;
   margin: 10rpx 10rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx 20rpx 20rpx 30rpx;
+  width: 280rpx;
+  height: 280rpx;
 }
 
 .other-waste {
   background-color: rgb(46, 44, 42);
-  border-radius: 38rpx 110rpx 110rpx 110rpx;
+  border-radius: 20rpx;
   margin: 10rpx 0 0 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx 30rpx 20rpx 20rpx;
+  width: 280rpx;
+  height: 280rpx;
 }
 
 .garbage-icon {
@@ -61,4 +77,26 @@ page {
 .garbage-text {
   margin-top: 15rpx;
   color: white;
+}
+.text{
+  margin-bottom: 25rpx;
+}
+.desc{
+  margin: 0 30rpx;
+  background-color: #fff;
+  border-bottom-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  color: #000;
+  padding: 30rpx;
+  font-size: 27rpx;
+}
+.tips{
+  margin: 30rpx;
+  color: red;
+  font-size: 27rpx;
+}
+.tips_txt{
+  margin-left: 8rpx;
+  position: relative;
+  top: -6rpx;
 }

@@ -38,11 +38,6 @@ Page({
    */
   getInfo: function (message) {
     var that = this;
-    let userinfo = wx.getStorageSync('userinfo');
-    wx.showNavigationBarLoading(message)              //在当前页面显示导航条加载动画
-    wx.showLoading({                        //显示 loading 提示框
-        title: message,
-    })
     if(!wx.getStorageSync('openId')){
       wx.showModal({
         title: '温馨提示',
@@ -57,6 +52,11 @@ Page({
       })
       return;
     }
+    let userinfo = wx.getStorageSync('userinfo');
+    wx.showNavigationBarLoading(message)              //在当前页面显示导航条加载动画
+    wx.showLoading({                        //显示 loading 提示框
+        title: message,
+    })
     wx.request({
       url: 'http://localhost:8088/cart/getMyCart',    //本地设置不校验合法域名
       data: { userId:userinfo.id,page: that.data.page, count: that.data.pageSize },

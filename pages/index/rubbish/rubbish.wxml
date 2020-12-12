@@ -2,27 +2,40 @@
 <view class="container">
   <view class="tab">
     <!-- 垃圾分类详细介绍 -->
-    <view class="box">
+    <view class="box" style="border-top-left-radius: 10rpx;">
       <view class="recoverable-garbage" bindtap="toRecoverable">
         <image class="garbage-icon" src="/images/recoverable-garbage.png"></image>
         <text class="garbage-text">可回收垃圾</text >
+        <text class="garbage-text text">RECYCLABLE WASTER</text >
       </view>
-
+    </view>
+    <view class="box" style="border-top-right-radius: 10rpx;">
       <view class="harmful-waste" bindtap="toHarmful">
         <image class="garbage-icon" src="/images/harmful-waste.png"></image>
         <text class="garbage-text">有害垃圾</text>
+        <text class="garbage-text text">HARMFUL WASTER</text >
       </view>
-
+    </view>
+    <view class="box">
       <view class="kitchen-waste" bindtap="toKitchen">
         <image class="garbage-icon" src="/images/kitchen-waste.png"></image>
         <text class="garbage-text">厨余垃圾</text>
+        <text class="garbage-text text">KITCHEN WASTER</text >
       </view>
-
+    </view>
+    <view class="box">
       <view class="other-waste" bindtap="toOther">
         <image class="garbage-icon" src="/images/other-waste.png"></image>
         <text class="garbage-text">其他垃圾</text>
+        <text class="garbage-text text">OTHER WASTER</text >
       </view>
     </view>
   </view>
-  
+  <view class='desc'>
+      <text>我们每个人都是地球上的一份子，保护地球村，从日常垃圾分类做起！</text>
+  </view>
+  <view class='tips'>
+    <icon type="warn" size="15" color='red'/>
+    <text class='tips_txt'>产生生活垃圾的个人是生活垃圾分类投放的责任主体，应将生活垃圾分别投放至相应的收集容器哟~</text>
+  </view>
 </view>
