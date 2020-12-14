@@ -22,19 +22,14 @@
     <view wx:if="{{sent_list.length}}">
       <view class="way-extract">
         <view class="extract-title">配送方式：帮送</view>
+      </view>
+      <view class="extract-address">
+        <text class="iconfont icon-dingwei1 site-icon"></text>
         <view class="address-info">
-          <text>姓名：</text>
-          <input placeholder-style='color: #999;font-size: 11pt' name='name' class='reserve_inp' value="{{name}}" />
+          <view style="margin-bottom: 10rpx;">{{item.name}} {{item.phone}}</view>
+          <view style="margin-right: 10px;font-size: 29rpx;">{{item.address}}</view>
         </view>
-        <view class="address-info">
-          <text>联系电话：</text>
-          <input placeholder-style='color: #999;font-size: 11pt;' name='phone' class='reserve_inp' value="{{phone}}" />
-        </view>
-        <view class="address-info" bindtap='onChangeAddress'>
-          <text>地址：</text>
-          <input placeholder-style='color: #999;font-size: 11pt;' name='address' class='reserve_inp' value='{{chooseAddress}}' />
-          <text class="iconfont icon-xiangyoujiantou arrows"></text>
-        </view>
+        <text class="iconfont icon-xiangyoujiantou arrows" bindtap="modalRadio"></text>
       </view>
       <view class="goods-list">
         <view wx:for="{{sent_list}}" class="com-content b-f">
@@ -49,6 +44,26 @@
         </view>
       </view>  
     </view>
+    <modal id="modal" hidden="{{hiddenmodal}}" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <view class="page-section-title">选择地址</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange">
+            <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.id}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.id}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="address-info">
+                <view class="weui-cell__bd">{{item.name}} {{item.phone ? item.phone : ''}}</view>
+                <view class="weui-cell__bd">{{item.address}}</view>
+              </view>
+            </label>
+          </radio-group>
+          <view bindtap="toAddAddess">
+            <text class="iconfont icon-add" style="margin-right: 15rpx;"></text>
+            新增地址
+          </view>
+        </view>
+    </modal>
     <view class="pay-way">
       <text>支付方式：</text>
       <view class="input">

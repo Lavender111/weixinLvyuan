@@ -14,9 +14,31 @@ page{
 .way-extract > view{
   padding: 10rpx 0rpx;
 }
-.address-info{
+.extract-address{
+  background-color: #fff;
   display: flex;
   align-items: center;
+  padding: 20rpx;
+}
+.address-info{
+  display: flex;
+  flex-direction: column;
+  margin: 0rpx 20rpx;
+}
+.site-icon{
+  font-size: 45rpx
+}
+.weui-cell{
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.weui-cell > view {
+ margin: 15rpx 0;
+}
+.distance{
+ position: relative;
+ left: 20%;
 }
 .reserve_inp{
   width: 70%;

@@ -13,6 +13,7 @@ Page({
       imgUrl: new Array(),
     },
     imgUrl: [],
+    city:wx.getStorageSync('site')
   },
 
   /**
@@ -182,6 +183,7 @@ Page({
       data:{
         id:userinfo.id,
         name:e.detail.value.name,
+        phone:e.detail.value.phone,
         address:e.detail.value.address,
         latitude:that.data.latitude,
         longitude:that.data.longitude,

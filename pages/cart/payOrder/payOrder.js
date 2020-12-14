@@ -7,21 +7,57 @@ Page({
     index:0,
     extract_list:[],
     sent_list:[],
-    name:'',
-    phone:'',
-    address:'',
+    hiddenmodal: true,
+    item: {},
+    items:[],
   },
-
-
   onLoad:function(options){
     var totalPrice = options.totalPrice
     this.setData({
       totalPrice
     })
+  },
+  onShow:function(){
+    this.setData({
+      items:[],
+      extract_list:[],
+      sent_list:[],
+    })
     this.classifyList();
     this.getAddress();
   },
-
+  //点击按钮弹出指定的hiddenmodalput弹出框
+  modalRadio: function () {
+    this.setData({
+      hiddenmodal: !this.data.hiddenmodal
+    })
+  }, 
+  //取消按钮 
+  cancel: function () {  
+    this.setData({
+      hiddenmodal: true
+    });
+  },
+  //确认
+  confirm: function () {
+    this.setData({
+      hiddenmodal: true,
+    })
+  },  
+  radioChange(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    const items = this.data.items;
+    for (let i = 0, len = items.length; i < len; ++i) {
+      items[i].checked = items[i].id === e.detail.value;
+    }
+    for (let j = 0; j < items.length; j++){
+      if(items[j].id == e.detail.value){
+        this.setData({
+          item: items[j]
+        })
+      }
+    }
+  },
   //将商品按配送方式分类
   classifyList:function(){
     var cartList = JSON.parse(wx.getStorageSync('cartList'));
@@ -64,12 +100,12 @@ Page({
       index: e.detail.value
     })
   },
-  //获取用户默认地址
+  //获取用户地址
   getAddress: function() {
-    let _this = this,
+    let that = this,
     userinfo = wx.getStorageSync('userinfo');
     wx.request({
-      url: 'http://localhost:8088/address/getDefault',
+      url: 'http://localhost:8088/address/selectAddress',
       method:'POST',
       data:{
         user_id:userinfo.id
@@ -78,15 +114,38 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success:function(res){
-        console.log(res)
-        if(res.data.sta == 1){
-          _this.setData({
-            name:res.data.obj.name,
-            phone:res.data.obj.phone,
-            chooseAddress:res.data.obj.address+res.data.obj.detail,
-            latitude:res.data.obj.latitude,
-            longitude:res.data.obj.longitude
+        if(res.data.obj == null){
+          wx.showModal({
+            title:"提示",
+            content:"您并未设置默认地址，是否前去设置",
+            success(res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/personal/address/address',
+                })
+              }
+            }
           })
+          return;
+        }
+        let {items} = that.data;
+        if(res.data.sta == 1){
+          for(var i = 0;i < res.data.obj.length;i++){
+            let {id,name,phone} = res.data.obj[i]
+            var address = res.data.obj[i].address+res.data.obj[i].detail
+            var data = {id,name,phone,address}
+            items.push(data);
+            that.setData({
+              items
+            })
+            if(res.data.obj[i].is_default === 1){
+              items[items.length-1].checked = true
+              that.setData({
+                items,
+                item:data
+              })
+            }
+          }
         } 
       }
     });
@@ -117,9 +176,9 @@ Page({
           commodityIds:commodityIds,
           creat: util.formatTime(new Date()),
           userId:userinfo.id,
-          name:e.detail.value.name,
-          phone:e.detail.value.phone,
-          address:e.detail.value.address,
+          name:that.data.item.name,
+          phone:that.data.item.phone,
+          address:that.data.item.address,
           totalPrice:that.data.totalPrice
         },
         header: {
@@ -151,9 +210,13 @@ Page({
       })
     }
     //that.getState();
-    
-    
   },
+  //跳转添加地址
+  toAddAddess:function(){
+    wx.navigateTo({
+      url: '/pages/personal/address/creat/creat',
+    })
+  }
 
   //获取商品状态
   /*getState:function(){
