@@ -32,7 +32,8 @@ Page({
         //获取市和区（区可能为空）
         that.setData({myAddress: a.city + a.district})
         //控制台输出结果
-        console.log(that.data.myAddress)
+        var address = a.province+a.city+a.district
+        wx.setStorageSync('site', address)
       },
       fail: function(res) {
         console.log(res);

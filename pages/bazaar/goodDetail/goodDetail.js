@@ -151,6 +151,7 @@ home() {
 //购买检测
 buy() {
     let that = this;
+    let userinfo = wx.getStorageSync('userinfo');
     if (!wx.getStorageSync('openId')) {
           wx.showModal({
                 title: '温馨提示',
@@ -164,6 +165,13 @@ buy() {
                 }
           })
           return false;
+    }
+    if(userinfo.id === that.data.publishinfo.promulgatorId){
+      wx.showModal({
+        title: '提示',
+        content:'这是您自己发布的商品哦！'
+      })
+      return;
     }
     if (that.data.publishinfo.delivery == 1) {
           if (that.data.name == '') {
@@ -212,13 +220,7 @@ getStatus() {
 paypost() {
     let that = this;
     let userinfo = wx.getStorageSync('userinfo');
-    if(userinfo.id === that.data.publishinfo.promulgatorId){
-          wx.showModal({
-            title: '提示',
-            content:'这是您自己发布的商品哦！'
-          })
-          return;
-    }
+    
     wx.showLoading({
           title: '正在下单',
     });

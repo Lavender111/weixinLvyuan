@@ -69,10 +69,9 @@ Page({
       list:list,
       price:price
     })
-    this.getAddress();
   },
-  onReady: function(){
-    
+  onShow:function(){
+    this.getAddress();
   },
   //移动选点
   onChangeAddress: function() {
@@ -152,8 +151,6 @@ Page({
    * 获取当前默认地址信息
    */
   getAddress: function() {
-    let _this = this,
-    userinfo = wx.getStorageSync('userinfo');
     if(!wx.getStorageSync('openId')){
       wx.showModal({
         title: '温馨提示',
@@ -168,6 +165,8 @@ Page({
       })
       return;
     }
+    let _this = this,
+    userinfo = wx.getStorageSync('userinfo');
     wx.request({
       url: 'http://localhost:8088/address/getDefault',
       method:'POST',
@@ -178,6 +177,20 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success:function(res){
+        if(res.data.obj == null){
+          wx.showModal({
+            title:"提示",
+            content:"您并未设置默认地址，是否前去设置",
+            success(res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/personal/address/address',
+                })
+              }
+            }
+          })
+          return;
+        }
         if(res.data.sta == 1){
           _this.setData({
             detail:res.data.obj,

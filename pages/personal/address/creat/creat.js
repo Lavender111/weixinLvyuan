@@ -6,8 +6,7 @@ Page({
   data: {
     disabled: false,
     nav_select: false, // 快捷导航
-    region: '',
-
+    region: wx.getStorageSync('site'),
     error: '',
   },
 

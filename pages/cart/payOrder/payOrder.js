@@ -6,7 +6,10 @@ Page({
     array: ['余额支付', '微信支付'],
     index:0,
     extract_list:[],
-    sent_list:[]
+    sent_list:[],
+    name:'',
+    phone:'',
+    address:'',
   },
 
 

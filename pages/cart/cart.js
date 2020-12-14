@@ -65,7 +65,6 @@ Page({
       success: function (res) {
           var contentlistTem = that.data.list;
           if (res.data.sta === 1) {
-            console.log(res)
               wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
               wx.hideLoading()               //隐藏 loading 提示框
               if (that.data.page == 1) {
