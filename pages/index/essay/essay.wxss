@@ -1,0 +1,25 @@
+/* pages/index/essay/essay.wxss */
+.container{
+  margin: 20rpx;
+}
+.title{
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  font-size: 15pt;
+}
+.time{
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.paragraph{
+  text-indent:2em;
+}
+.paragraph > view {
+  margin-bottom: 20rpx;
+  font-size: 35rpx;
+
+}
+.paragraph > image {
+  margin-bottom: 20rpx;
+  margin-left: 30rpx;
+}

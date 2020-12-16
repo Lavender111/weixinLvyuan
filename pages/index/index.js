@@ -11,13 +11,33 @@ Page({
     myAddress: "",
     balance:0,
     recycle:0,
-    earnings:0
+    earnings:0,
+    information:[
+      {
+        id:1,
+        title:"你用环保袋的方式，可能很不环保",
+        read:2,
+        img:'/images/information2.jpg'
+      },
+      {
+        id:2,
+        title:"垃圾分类能带来多少收益",
+        read:1,
+        img:'/images/information3.jpg'
+      },
+      {
+        id:3,
+        title:"零废弃生活其实没有那么难",
+        read:2,
+        img:'/images/information.jpg'
+      },
+    ]
   },
   onLoad: function(){
     var that = this
     //用微信提供的api获取经纬度
     wx.getLocation({
-     type: 'wgs84',
+     type: 'gcj02',
      success: function(res){
      that.setData({myLatitude: res.latitude, myLongitude: res.longitude})
      //用腾讯地图的api，根据经纬度获取城市
@@ -73,9 +93,9 @@ Page({
       url: '/pages/index/recycle/recycle',
     })
   },
-  // toMarket:function(){
-  //   wx.navigateTo({
-  //     url: '/pages/index/market/market',
-  //   })
-  // }
+  toEssay:function(e){
+    wx.navigateTo({
+      url: '/pages/index/essay/essay?id='+e.currentTarget.dataset.id,
+    })
+  }
 })

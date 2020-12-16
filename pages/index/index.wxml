@@ -82,25 +82,11 @@
       <text class="title-text">绿源资讯</text>
     </view>
     <view class="activity-list">
-      <view class="list">
-        <image class="list-image" src="/images/activity1.jpg" />
+      <view class="list" wx:for="{{information}}" wx:key="index" bindtap="toEssay" data-id="{{item.id}}">
+        <image class="list-image" src="{{item.img}}" />
         <view class="list-txt">
-          <view class="txt-title">变废为宝</view>
-          <view class="txt-tip">阅读 21</view>
-        </view>
-      </view>
-      <view class="list">
-        <image class="list-image" src="/images/activity1.jpg" />
-        <view class="list-txt">
-          <view class="txt-title">变废为宝</view>
-          <view class="txt-tip">阅读 21</view>
-        </view>
-      </view>
-      <view class="list">
-        <image class="list-image" src="/images/activity1.jpg" />
-        <view class="list-txt">
-          <view class="txt-title">变废为宝</view>
-          <view class="txt-tip">阅读 21</view>
+          <view class="txt-title">{{item.title}}</view>
+          <view class="txt-tip">阅读 {{item.read}}</view>
         </view>
       </view>
     </view>

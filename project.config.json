@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -222,6 +222,13 @@
 					"id": -1,
 					"name": "pages/index/rubbish/rubbish",
 					"pathName": "pages/index/rubbish/rubbish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/essay/essay",
+					"pathName": "pages/index/essay/essay",
 					"scene": null
 				}
 			]

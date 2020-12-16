@@ -1,0 +1,112 @@
+<!--pages/index/essay/essay.wxml-->
+<view class="container" wx:if="{{id == 1}}">
+  <view class="title">环保冷知识：你用环保袋的方式，可能很不环保</view>
+  <view class="time">
+    2020-11-30  |  阅读 2
+  </view>
+  <view class="content">
+    <view class="paragraph">
+      <view>近年来我们一直被灌输着这样一个观点：可重复使用的购物袋是利于环保的好东西，一次性塑料袋则相反。许多城市都开始限制塑料袋的使用，不少商家已经停止提供塑料袋，或者给塑料袋标上价格。一些国家开始推广可循环使用购物袋——或者你更愿意叫它们“环保袋”。</view>
+      <image src="http://e0.ifengimg.com/08/2019/0310/F5A60D0170B3A421299BEF51648CE5EC9E0E4F4E_size42_w720_h405.jpeg"></image>
+    </view>
+    <view class="paragraph">
+      <view>但实际上，所谓的环保袋对环境的危害可能比塑料袋更大。</view>
+    </view>
+    <view class="paragraph">
+      <view>2008年，英国环境局（UKEA）发布了一项研究：纸袋、塑料袋、帆布袋以及可回收聚丙烯（无纺布）托特包，到底哪种材质的袋子最不环保？结果令人惊讶——在日常生活中，要使污染和碳排放量最小化的办法是：使用塑料袋，并至少重复使用一次，比如用作垃圾袋或其他次要用途。就单次使用来说，由高密度聚乙烯（HDPE，即食品店使用的塑料袋材质）制成的传统塑料袋对环境影响最小。而棉布购物袋对环境的影响是最大的，因为这种材质在制造和运输过程中需要更多资源。</view>
+    </view>
+    <view class="paragraph">
+      <view>HDPE塑料袋具有异物感和人造感。它们挂在树梢上，卡在动物的食管中，烂在垃圾填埋场里，堆积在城市的角落，降解成微小颗粒漂浮在大洋环流中——直至几百年后的未来。</view>
+      <image src="http://e0.ifengimg.com/12/2019/0310/4C4814D4632CE24EC3E3CBC1E34E7CDD4F753113_size23_w660_h371.jpeg"></image>
+    </view>
+    <view class="paragraph">
+      <view>虽然HDPE塑料袋不易降解，但是制造和运输所需的资源非常少。塑料袋的碳排放量、废弃物产生量和副产物量都低于棉布袋或纸袋。塑料袋不仅可以循环使用，还价格低廉，也许这就是塑料袋在我们的生活中无处不在的原因。</view>
+    </view>
+    <view class="paragraph">
+      <view>英国环境局的这个研究计算出，每只HDPE塑料袋的碳消耗略低于2千克。要达到相同的水平，纸袋需要被使用7次，可回收聚丙烯做的托特包需要26次，而棉布包需要327次。还有这个研究没有涉及的有皮革金属装饰的设计师款托特包，大概是个天文数字。</view>
+    </view>
+    <view class="paragraph">
+      <view>环保袋和塑料袋一样，也会泛滥成灾，有些甚至没怎么被用过就被随意丢弃在路边、垃圾箱里，到处都是。设计师迪米崔·西格尔（Dmitri Siegel）曾在自己家中发现了23只来自各种组织、商店和品牌的环保袋。如今这些袋子无处不在，导致消费者将它们当成一次性用品，违背了设计者的初衷。</view>
+    </view>
+    <view class="paragraph">
+      <view>不论是精心制作的设计师作品，还是因日常使用而损坏的促销产品，几乎没有哪个环保袋能物尽其用。它们的使用次数之低，完全无法弥补制作所消耗的资源。</view>
+    </view>
+    <view class="paragraph">
+      <view>从生态学的观点看，环保袋的最佳使用方法有点极端：要么你一直使用，要么完全不用。</view>
+    </view>
+  </view>
+  <view>
+    <!-- 底线 -->
+    <view class="title-footer p-r">
+      <text class="f-24 col-9 cont">更多资讯敬请期待</text>
+      <view class="hr"></view>
+    </view>
+  </view>
+</view>
+<view class="container" wx:if="{{id == 2}}">
+  <view class="title">垃圾分类能带来多少收益</view>
+  <view class="time">
+    2020-12-25  |  阅读 1
+  </view>
+  <view class="content">
+    <view class="paragraph">
+      <view>垃圾分类的价值，一直是被低估的。之所以要垃圾分类，是要把可回收垃圾从全部生活垃圾中剥离出来，减少那些不得不焚烧或堆埋的不可回收物。另外，每一类垃圾的背后，都对应着特定的再生公司，有再利用价值；可回收的垃圾变成生产物料，再生企业才能不断运营下去。</view>
+      <image src="/images/information3.jpg"></image>
+    </view>
+    <view class="paragraph">
+      <view>7月28日，红星新闻记者在电子科技大学MBA联合会成集思瀚公益小组举办的垃圾分类公益宣讲活动上，了解了多家垃圾回收企业的“解题思路”。</view>
+    </view>
+    <view class="paragraph">
+      <view>成都奥北环保科技有限公司董事长汪剑超就是瞄准垃圾分类这一市场的创业者。</view>
+    </view>
+    <view class="paragraph">
+      <view>资料显示，2005年从中科院软件研究生毕业后，汪剑超进入微软，成为一名软件工程师。不过在2011年，汪剑超离开了微软，放弃了“高大上”的软件工程师工作，来到成都做起了垃圾分类的创业者。</view>
+      <image src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=550146756,951078769&fm=173&app=25&f=JPEG?w=640&h=427&s=F3A087A8468A2EEA189DC986030040F3"></image>
+    </view>
+    <view class="paragraph">
+      <view>汪剑超认为，垃圾处理方式为直接填埋或焚烧，这样会造成土地浪费和环境污染。如果从源头上进行垃圾分类，将有用的垃圾进行回收利用，不仅能减少垃圾对环境的负担，也能节约资源创造商业利益。</view>
+    </view>
+    <view class="paragraph">
+      <view>据他介绍，成都已经有160多所中小学，甚至大学校园开始了垃圾分类的试点。以四川师范大学附属小学举例，据介绍。2017年9月时，川师附小开始进行垃圾分类的试点。在随后的连续3个学期中，川师附小共完成67189.20kg的分类垃圾投放，环保收益达到64659.25元。</view>
+    </view>
+  </view>
+  <view>
+    <!-- 底线 -->
+    <view class="title-footer p-r">
+      <text class="f-24 col-9 cont">更多资讯敬请期待</text>
+      <view class="hr"></view>
+    </view>
+  </view>
+</view>
+<view class="container" wx:if="{{id == 3}}">
+  <view class="title">零废弃生活其实没有那么难</view>
+  <view class="time">
+    2020-12-01  |  阅读 2
+  </view>
+  <view class="content">
+    <view class="paragraph">
+      <view>现代人对物质通常都是喜新厌旧的，一旦不再需要通常只会扔掉处理。</view>
+      <image src="https://5b0988e595225.cdn.sohucs.com/images/20191212/d800a312f6594e68be5df17fc5da15eb.jpeg"></image>
+    </view>
+    <view class="paragraph">
+      <view>像THE BULK HOUSE零废弃创始人余元在2016年经历了一次搬家，当时她住在一个没有电梯的房子里，所有的东西搬到一层不太现实，还好最后邻居老太太接受了那些搬不走的行李。</view>
+    </view>
+    <view class="paragraph">
+      <view>这次搬家开始让余元反思，我们的生活中真的需要那么多的东西吗﹖是不是应该给自己的生活做一些减法?</view>
+    </view>
+    <view class="paragraph">
+      <view>相比于断舍离，‘零废弃′更加关注被扔掉的东西的用途和结果。我们把闲置物品丢掉，只是让它们短暂地在我们眼皮底下消失，垃圾始终存在。与其粗暴地一扔了之，不如为它们找到新的安身之处继续发光发热。</view>
+      <image src="/images/information.jpg"></image>
+    </view>
+    <view class="paragraph">
+      <view>“零废弃生活”并非完全不产生垃圾，而是要尽可能地减少。拒绝你不需要的，减少你需要的，多一些重复使用，对你不能拒绝、减少和重复使用的物品进行回收和分解，实际上，“零废弃生活”并没有我们想象的那么困难，只要愿意做一个有心人，我们完全可以压缩生活垃圾的生产。</view>
+    </view>
+  </view>
+  <view>
+    <!-- 底线 -->
+    <view class="title-footer p-r">
+      <text class="f-24 col-9 cont">更多资讯敬请期待</text>
+      <view class="hr"></view>
+    </view>
+  </view>
+</view>
