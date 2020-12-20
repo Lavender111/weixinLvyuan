@@ -69,27 +69,24 @@ Page({
       list:list,
       price:price
     })
-  },
-  onShow:function(){
     this.getAddress();
   },
+  
   //移动选点
   onChangeAddress: function() {
-    var _page = this;
+    var that = this;
     wx.chooseLocation({
       success: function(res) {
         console.log(res)
-        _page.setData({
+        that.setData({
           chooseAddress: res.name,
           latitude:res.latitude,
-          longitude:res.longitude
-        });
-        _page.setData({
+          longitude:res.longitude,
           items:[
             {id:0,value:'等待回收商接单',name:'等待回收商接单',checked:true},
           ],
-        })
-        _page.getRecyclers(_page.data.latitude,_page.data.longitude)
+        });
+        that.getRecyclers(that.data.latitude,that.data.longitude)
       },
       fail: function(err) {
        console.log(err)

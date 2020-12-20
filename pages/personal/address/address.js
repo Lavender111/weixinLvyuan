@@ -135,4 +135,18 @@ Page({
       }
     })
   },
+  //返回按键监听
+  onUnload: function () {
+    var pages = getCurrentPages();//获取页面栈
+    if (pages.length > 1) {
+      //上一个页面实例对象
+      var prePage = pages[pages.length - 2];
+      //调用上一个页面的onShow方法
+      try {
+        prePage.getAddress()
+      } catch (e) {
+      }
+      
+    }
+  }
 });

@@ -6,6 +6,7 @@ App({
         console.log("处于登录态")
       },
       fail:function(res){
+        wx.clearStorageSync();
         console.log("需要重新登录")
       }
     })
