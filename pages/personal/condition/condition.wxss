@@ -56,6 +56,11 @@ page{
   display: flex;
   align-items: center;
 }
+.flex-btn{
+  display: flex;
+  position: absolute;
+  right: 20rpx;
+}
 .btn-main {
   border-radius: 4px;
   border: 1rpx solid #fd4a5f;

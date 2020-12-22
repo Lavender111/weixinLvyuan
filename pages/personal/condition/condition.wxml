@@ -38,15 +38,21 @@
               <view class="info-all" style="padding-top:10rpx">
                 <text>预计总计:</text>
                 <text class="info-content" style="color:#fd4a5f;">{{item.price}}元</text>
+              </view>
+              <view class="info-all" style="padding-top:10rpx">
+                <text wx:if="{{item.actualPay}}">实际总价：</text>
+                <text wx:if="{{item.actualPay}}" class="info-content" style="color:#fd4a5f;">{{item.actualPay}}元</text>
                 <view class="flex-box">
                   <view wx:if="{{item.state == 0 || item.state == 1}}" bindtap="cancelAppointment" class="btn-default" data-id="{{item.id}}">取消预约</view>
                   <view class="btn-main" wx:if="{{item.state == 1}}" bindtap="confirmRecipt" data-id="{{item.id}}">确认收款</view>
                 </view>
-                <view class="flex-box" wx:if="{{item.state == 2}}">
+                <view class="flex-btn" wx:if="{{item.state == 2}}">
                   <view class="btn-main">已打包</view>
+                  <view class="btn-default" data-id="{{item.id}}" bindtap="delete">删除订单</view>
                 </view>
                 <view class="flex-box" wx:if="{{item.state == 3}}">
-                  <view class="btn-default">已取消</view>
+                  <view class="btn-default" style="margin-left:20rpx;">已取消</view>
+                  <view class="btn-default" data-id="item.id" bindtap="delete">删除订单</view>
                 </view>
               </view>
             </view>
